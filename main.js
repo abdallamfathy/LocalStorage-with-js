@@ -54,3 +54,19 @@ function checkItem() {
         showMessage();
     }
 }
+
+// Create add function
+function addItem() {
+    // check condition
+    if (input.value !== '') {
+        
+        // Add item  in local storage
+        localStorage.setItem(input.value,"test")
+            // add results
+            results.innerHTML = `Item Called <span>${input.value}</span> Added`
+        
+    } else {
+        // trigger show message function
+        showMessage();
+    }
+}
