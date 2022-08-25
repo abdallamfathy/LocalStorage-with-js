@@ -32,3 +32,25 @@ function showMessage() {
     // Add text
     results.innerHTML = "Input can't be empty";
 }
+
+// Create check function
+function checkItem() {
+    
+    // check condition
+    if (input.value !== '') {
+        
+        // check if item is in local storage
+        if (localStorage.getItem(input.value)) {
+            // add results
+            results.innerHTML = `Found in local storage Item Called <span>${input.value}</span>`
+        }// when item isn't in local storage
+        else {
+
+            results.innerHTML = `No Local Storage Item With The Name <span>${input.value}</span>`;
+      
+          }
+    } else {
+        // trigger show message function
+        showMessage();
+    }
+}
