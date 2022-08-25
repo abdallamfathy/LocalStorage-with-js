@@ -21,7 +21,7 @@ allSpans.forEach(span =>{
             deleteItem();
         }
         // show condition
-        if (e.target.classList.contains("show-item")) {
+        if (e.target.classList.contains("show-items")) {
             showItem();
         }
     });
@@ -96,3 +96,20 @@ function deleteItem() {
         showMessage();
     }
 };
+
+// create show function
+function showItem() {
+    // check condition
+    if (localStorage.length) {
+        results.innerHTML = ''
+        // loop over local storage
+          for (let [key,value] of Object.entries(localStorage)) {
+              
+            results.innerHTML += `<span class="keys">${key}</span>`;  
+          }
+        
+    } else {
+        // trigger show message function
+        results.innerHTML = "There is no items in the local storage please add one."
+    }
+}
