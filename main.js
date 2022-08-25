@@ -24,6 +24,11 @@ allSpans.forEach(span =>{
         if (e.target.classList.contains("show-item")) {
             showItem();
         }
-        
-    })
-})
+    });
+});
+
+// Create function to show message
+function showMessage() {
+    // Add text
+    results.innerHTML = "Input can't be empty";
+}
