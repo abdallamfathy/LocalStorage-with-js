@@ -69,4 +69,30 @@ function addItem() {
         // trigger show message function
         showMessage();
     }
-}
+    input.value = '';
+
+};
+
+// Create delete function
+function deleteItem() {
+    // check condition
+    if (input.value !== '') {
+        
+        // check if item is in local storage
+        if (localStorage.getItem(input.value)) {
+            // delete the item
+            localStorage.removeItem(input.value)
+            // add results
+            results.innerHTML = ` Item Called <span>${input.value}</span> deleted`
+        }// when item isn't in local storage
+        else {
+
+            results.innerHTML = `No Local Storage Item With The Name <span>${input.value}</span>`;
+            
+          }
+          input.value = '';
+    } else {
+        // trigger show message function
+        showMessage();
+    }
+};
